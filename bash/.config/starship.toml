@@ -1,20 +1,20 @@
-# ~/.config/starship.toml
-
 "$schema" = 'https://starship.rs/config-schema.json'
 
-#$os\
 
 format = """
 [](red)\
 $time\
 
+[](fg:red bg:peach )\
 $username\
-[](bg:peach fg:red)\
+
+[](fg:peach bg:yellow )\
 $directory\
-[](bg:yellow fg:peach)\
+
+[](fg:yellow bg:green )\
 $git_branch\
 $git_status\
-[](fg:yellow bg:green)\
+
 $c\
 $rust\
 $golang\
@@ -25,19 +25,24 @@ $java\
 $kotlin\
 $haskell\
 $python\
+
 [](fg:green bg:sapphire)\
 $conda\
+
 [](fg:sapphire bg:lavender)\
+$cmd_duration\
 
 [ ](fg:lavender)\
-$cmd_duration\
 $line_break\
-$character"""
+$character
+"""
+
+#$os\
 
 palette = 'catppuccin_mocha'
 
 [os]
-disabled = false
+disabled = true
 style = "bg:red fg:crust"
 
 [os.symbols]
@@ -64,13 +69,13 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:red fg:crust"
-style_root = "bg:red fg:crust"
-format = '[ $user]($style)'
+style_user = "bg:peach fg:crust"
+style_root = "bg:peach fg:crust"
+format = '[$user]($style)'
 
 [directory]
-style = "bg:peach fg:crust"
-format = "[ $path ]($style)"
+style = "bg:yellow fg:crust"
+format = "[$path]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -83,13 +88,15 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:yellow"
-format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
+style = "bg:green"
+format = '[[$symbol $branch](fg:crust bg:green)]($style)'
 
 [git_status]
-style = "bg:yellow"
-format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+style = "bg:green"
+format = '[[($all_status$ahead_behind )](fg:crust bg:green)]($style)'
 
+
+##################################
 [nodejs]
 symbol = ""
 style = "bg:green"
@@ -145,17 +152,19 @@ symbol = ""
 style = "bg:sapphire"
 format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
 
-[conda]
+[conda] # package manager
 symbol = "  "
 style = "fg:crust bg:sapphire"
 format = '[$symbol$environment ]($style)'
 ignore_base = false
+#############################################
+
 
 [time]
 disabled = false
 time_format = "%R"
 style = "bg:red" #lavender
-format = '[[ $time ](fg:crust bg:red)]($style)' #  #lavender
+format = '[[$time](bg:red fg:crust)]($style)' #   lavender
 
 [line_break]
 disabled = true
@@ -171,11 +180,13 @@ vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 
 [cmd_duration]
 show_milliseconds = true
-format = " in $duration "
 style = "bg:lavender"
+format = '[[ in $duration](bg:lavender fg:crust)]($style)' # " in $duration"
 disabled = false
 show_notifications = true
-min_time_to_notify = 45000
+min_time_to_notify = 0 #45000
+
+
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

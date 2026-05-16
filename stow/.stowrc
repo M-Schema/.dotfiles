@@ -1,0 +1,5 @@
+--target=~
+# --ignore=.stowrc
+
+# The syntax of the stow command is:
+# stow [options] [action flag] package

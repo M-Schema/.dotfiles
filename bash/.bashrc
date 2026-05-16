@@ -1,5 +1,3 @@
-# ~/.bash.rc
-
 # Sample .bashrc for SUSE Linux
 # Copyright (c) SUSE Software Solutions Germany GmbH
 
@@ -13,26 +11,14 @@
 # ridden in every subshell.
 
 #test -s ~/.alias && . ~/.alias || true
-
 #########################################################
 
+
 echo # Leerzeile
+
+# https://github.com/dylanaraps/neofetch
 neofetch
 
-########################################################
-
-#source ~/.bash-preexec.sh
-#preexec() { echo "just typed $1"; }
-#function precmd_hello_one() { echo "printing the prompt"; }
-#precmd_functions+=(precmd_hello_one)
-
-########################################################
-# Custom pre-prompt and pre-execution Commands in Bash
-#function blastoff(){
-    # echo "🚀"
-#    echo "testestest"
-#}
-#starship_precmd_user_func="blastoff"
-
+# https://starship.rs
 # Add the following to the end of ~/.bashrc:
 eval "$(starship init bash)"
