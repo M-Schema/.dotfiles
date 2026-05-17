@@ -38,5 +38,5 @@ out/                # IntelliJ Build-Output
 # Generelle Caches
 .cache/
 
-# Claude — runtime logs
-.claude/logs/
+# Claude
+.claude/
