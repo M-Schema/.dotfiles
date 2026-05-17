@@ -1,12 +1,57 @@
 {
   "permissions": {
     "allow": [
+      "Bash(pwd)",
+      "Bash(whoami)",
+      "Bash(id)",
+      "Bash(hostname)",
+      "Bash(date)",
+      "Bash(uptime)",
+      "Bash(uname -a)",
+      "Bash(env)",
+      "Bash(ls)",
+      "Bash(ls -la)",
+      "Bash(ls -l)",
+      "Bash(tree)",
+      "Bash(df -h)",
       "Bash(git status)",
-      "Bash(git log*)",
-      "Bash(git diff*)"
+      "Bash(git branch)",
+      "Bash(git branch -v)",
+      "Bash(git remote -v)",
+      "Bash(git stash list)",
+      "Bash(git log --oneline)",
+      "Bash(git log --oneline -20)",
+      "Bash(git diff)",
+      "Bash(git diff --staged)"
     ],
     "deny": []
   },
-  "hooks": {},
-  "model": "opus"
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -f .claude/NOTES.md ] && { echo '## Repo notes'; cat .claude/NOTES.md; }; true"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "mkdir -p ~/.claude/logs && jq -r '\"\\(now | todate) \\(.tool_input.command)\"' >> ~/.claude/logs/bash-$(date +%Y-%m).log"
+          }
+        ]
+      }
+    ]
+  },
+  "model": "haiku",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  }
 }

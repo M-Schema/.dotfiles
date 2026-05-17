@@ -3,7 +3,10 @@
     "allow": [
       "Bash(find /usr/share/icons -name \"konsole*\" -type f 2>/dev/null | grep -v kalendar | head -10)",
       "Read(//usr/share/icons/**)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(fastfetch --list-presets)",
+      "Bash(ls /home/c0ffee/git/M-Schema/ 2>&1)",
+      "Read(//home/c0ffee/git/M-Schema/**)"
     ]
   }
 }
