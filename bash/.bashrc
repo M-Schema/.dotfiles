@@ -1,5 +1,3 @@
-echo
-
 # https://github.com/fastfetch-cli/fastfetch
 fastfetch
 

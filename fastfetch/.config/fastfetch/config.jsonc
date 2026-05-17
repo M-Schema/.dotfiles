@@ -1,6 +1,12 @@
 // Based on #1576
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "position": "right",
+        "padding": {
+            "right": 0
+        }
+    },
     "display": {
         "color": {
             "keys": "blue"
@@ -18,6 +24,9 @@
         "brightColor": false
     },
     "modules": [
+        "break",                           
+        "colors",
+
         {
             "type": "version",
             "key": "╔═══════════════╦═{$5}╗\u001b[41D",
@@ -71,6 +80,11 @@
             "type": "bios",
             "key": "║  {icon}  BIOS      ║{$3}║{$2}",
             "format": "{vendor} {version}"
+        },
+        {
+            "type": "custom",
+            "key": "║{#blue}               ║{$3}{#keys}║",
+            "format": ""
         },
 
         // Hardware section with cyan color theme
@@ -262,8 +276,8 @@
         },
 
         // End with color palette
-        "break",                                             // Add a blank line
-        "colors"                                             // Display color palette
+        //"break",                                             // Add a blank line
+        //"colors"                                             // Display color palette
     ]
 }
 
