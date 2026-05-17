@@ -1,4 +1,5 @@
 # Claude — allowlist: alles ignored, nur explizit Geteiltes erlaubt
+.claude
 claude/.claude/*
 !claude/.claude/CLAUDE.md
 !claude/.claude/settings.json
