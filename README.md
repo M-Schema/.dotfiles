@@ -24,4 +24,4 @@ organised with [GNU Stow](https://www.gnu.org/software/stow/).
       email = you@example.com
       signingkey = ~/.ssh/id_ed25519
   ```
-
+- ed25519 SSH keys, see: [https://github.com/settings/keys](https://github.com/settings/keys)

@@ -13,9 +13,9 @@
 
 ## Eigene ToDos (aus README)
 
-9. [ ] KSP
+9. [ ] KSP Kerbal Space Program
 10. [x] CLAUDE-Package committen (existiert lokal, aber untracked)
-11. [ ] NVIM-Config dotfilen
+11. [x] NVIM-Config dotfilen
 12. [ ] fastfetch-Config feintunen / Layout nach Geschmack anpassen
 13. [ ] Packages einzeln durchgehen und optimieren, verbessern, erweitern
 14. [ ] Claude Package — Potenziale aus Review:
@@ -38,3 +38,4 @@
     - [ ] q) `flashcard-maker` Agent — Anki-Style Karten (Front/Back)
     - [ ] r) Statusline: Output-Style anzeigen wenn aktiv
     - [ ] s) `claude/.claude/README.md` + Allowlist-Eintrag
+    - [ ] t) Möglichkeit, eine ToDo.md jeweils in die Projekt-.claude-Directory zu schreiben und lesen
