@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /usr/share/icons -name \"konsole*\" -type f 2>/dev/null | grep -v kalendar | head -10)",
+      "Read(//usr/share/icons/**)",
+      "WebSearch"
+    ]
+  }
+}

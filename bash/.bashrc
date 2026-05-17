@@ -1,24 +1,7 @@
-# Sample .bashrc for SUSE Linux
-# Copyright (c) SUSE Software Solutions Germany GmbH
+echo
 
-# There are 3 different types of shells in bash: the login shell, normal shell
-# and interactive shell. Login shells read ~/.profile and interactive shells
-# read ~/.bashrc; in our setup, /etc/profile sources ~/.bashrc - thus all
-# settings made here will also take effect in a login shell.
-#
-# NOTE: It is recommended to make language settings in ~/.profile rather than
-# here, since multilingual X sessions would not work properly if LANG is over-
-# ridden in every subshell.
-
-#test -s ~/.alias && . ~/.alias || true
-#########################################################
-
-
-echo # Leerzeile
-
-# https://github.com/dylanaraps/neofetch
-neofetch
+# https://github.com/fastfetch-cli/fastfetch
+fastfetch
 
 # https://starship.rs
-# Add the following to the end of ~/.bashrc:
 eval "$(starship init bash)"

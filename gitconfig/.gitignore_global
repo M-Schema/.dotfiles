@@ -1,0 +1,39 @@
+# OS
+.DS_Store
+Thumbs.db
+.directory          # KDE Dolphin Metadaten
+
+# Editor-Backups & Swap
+*~
+*.bak
+*.swp
+*.swo
+.#*                 # Emacs lock files
+\#*\#               # Emacs autosave
+
+# Vim / Neovim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+Session.vim
+.netrwhist
+
+# VS Code / VSCodium
+.vscode/
+*.code-workspace
+
+# JetBrains / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+out/                # IntelliJ Build-Output
+
+# Lokale Env-Files (Secrets)
+.env.local
+.env.*.local
+
+# Lokale Git-Config (sollte nie in einem Repo landen)
+.gitconfig.local
+
+# Generelle Caches
+.cache/

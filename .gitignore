@@ -1,0 +1,18 @@
+# Claude — allowlist: alles ignored, nur explizit Geteiltes erlaubt
+claude/.claude/*
+!claude/.claude/CLAUDE.md
+!claude/.claude/settings.json
+!claude/.claude/agents/
+!claude/.claude/commands/
+!claude/.claude/skills/
+!claude/.claude/hooks/
+!claude/.claude/output-styles/
+
+# OS
+.DS_Store
+.directory
+Thumbs.db
+
+# Editor-Backups
+*~
+*.swp
