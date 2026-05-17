@@ -1,11 +1,11 @@
 [include]
 	path = ~/.gitconfig.local
-
 # Required in ~/.gitconfig.local:
 # [user]
 #     name = Your Name
 #     email = you@example.com
 #     signingkey = ~/.ssh/id_ed25519
+
 [init]
 	defaultBranch = main
 [pull]

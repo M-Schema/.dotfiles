@@ -63,10 +63,18 @@
 - One sentence per source line (eases diff review).
 
 ## Behavior
-- Never delete files. Never run git commands. The user handles these manually.
-- Prefer editing existing files over creating new ones.
-- When unsure about scope, ask. Never assume.
-- Before any file change, state in one sentence what you intend to change. Trivial edits (strictly: typo fixes, ticking a checkbox in a markdown/todo file, or a single-line mechanical edit with no logic change) can then proceed directly. Everything else — new files, multi-line changes, multi-file changes, logic changes, structural/config changes, renames affecting more than one site — requires entering plan mode first: show the full plan (files affected, resulting folder structure) and wait for explicit approval before proceeding.
+- **Never run commands that change system state:** No git, package managers (zypper/apt/pacman), systemctl, sudo, file deletions, or any destructive operations. The user handles these manually.
+- **Always ask before any file change**, regardless of size. State in one sentence what you intend to change and wait for explicit approval. This includes typos, checkbox ticks, single-line edits, and new files.
+- **Before using any tool (Bash, Read, etc.), briefly explain what you're about to do.** This keeps actions transparent.
+- **Safe read-only tools only:** Use Bash for inspection only (git status, ls, grep, etc.), never for system commands.
+- Before marking a task as complete in .claude/ToDo.md, ask if everything is finished — do not assume completion.
+- Prefer editing existing files over creating new ones. When unsure about scope, ask. Never assume.
+
+## Project Workflow
+- At the start of each coding/config session, check whether `.claude/TODO.md` exists in the current project.
+- If it exists: read it silently and use it as a guide throughout the session.
+- If it does not exist: after the initial questions (when project context is clear), offer once to create one as a project guide.
+- The file lives in `.claude/TODO.md` relative to the project root. Do not create it without explicit confirmation.
 
 ## Personal Context
 - I'm a B.Sc. IT Management student at Euro-FH (distance learning)

@@ -22,7 +22,14 @@
       "Bash(git log --oneline)",
       "Bash(git log --oneline -20)",
       "Bash(git diff)",
-      "Bash(git diff --staged)"
+      "Bash(git diff --staged)",
+      "Bash(git remote get-url origin)",
+      "Bash(git rev-parse HEAD)",
+      "Bash(git show --stat)",
+      "Bash(find)",
+      "Bash(which)",
+      "Bash(command -v)",
+      "Bash(cat)"
     ],
     "deny": []
   },
@@ -49,7 +56,6 @@
       }
     ]
   },
-  "model": "haiku",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"

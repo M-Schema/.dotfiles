@@ -46,13 +46,31 @@
             "key": "║  {icon}  \u001b[s{sysname}\u001b[u\u001b[10C║{$3}║{$2}"
         },
         {
-            "type": "datetime",
-            "key": "║  {icon}  Fetched   ║{$3}║{$2}",
-            "format": "{year}-{month-pretty}-{day-pretty} {hour-pretty}:{minute-pretty}:{second-pretty} {timezone-name}"
+            "condition": {
+                "!system": "macOS"
+            },
+            "type": "disk",
+            "key": "║  {icon}  OS Age    ║{$3}║{$2}",
+            "folders": "/",
+            "format": "{create-time:10} [{days} days]"
         },
         {
-            "type": "locale",
-            "key": "║  {icon}  Locale    ║{$3}║{$2}"
+            "condition": {
+                "system": "macOS"
+            },
+            "type": "disk",
+            "key": "║  {icon}  OS Age    ║{$3}║{$2}",
+            "folders": "/System/Volumes/VM",
+            "format": "{create-time:10} [{days} days]"
+        },
+        {
+            "type": "kernel",
+            "key": "║  {icon}  Kernel    ║{$3}║{$2}"
+        },
+        {
+            "type": "bios",
+            "key": "║  {icon}  BIOS      ║{$3}║{$2}",
+            "format": "{vendor} {version}"
         },
 
         // Hardware section with cyan color theme
@@ -62,21 +80,8 @@
             "format": "{#bright_cyan} Hardware "
         },
         {
-            "type": "chassis",
-            // Similar structure but with cyan color formatting:
-            // │{#cyan}│             - Left border with cyan color
-            //  {icon}               - Chassis icon
-            //  Chassis             - Fixed label text
-            // │{$4}│{#keys}║{$2}    - Positioning and borders for value area
-            "key": "║{#cyan}│ {icon}  Chassis   │{$4}│{#keys}║{$2}"
-        },
-        {
             "type": "memory",
             "key": "║{#cyan}│ {icon}  RAM       │{$4}│{#keys}║{$2}"
-        },
-        {
-            "type": "swap",
-            "key": "║{#cyan}│ {icon}  SWAP      │{$4}│{#keys}║{$2}"
         },
         {
             "type": "cpu",
@@ -119,7 +124,7 @@
         {
             "type": "display",
             "key": "║{#green}│ {icon}  Display   │{$4}│{#keys}║{$2}",
-            "compactType": "original-with-refresh-rate"
+            "compactType": "compact"
         },
         {
             "type": "gpu",
@@ -145,14 +150,6 @@
         {
             "type": "terminal",
             "key": "║{#yellow}│ {icon}  Terminal  │{$4}│{#keys}║{$2}"
-        },
-        {
-            "type": "terminalfont",
-            "key": "║{#yellow}│ {icon}  Term Font │{$4}│{#keys}║{$2}"
-        },
-        {
-            "type": "terminaltheme",
-            "key": "║{#yellow}│ {icon}  Colors    │{$4}│{#keys}║{$2}"
         },
         {
             "type": "packages",
@@ -230,8 +227,12 @@
             "format": "git {~12}"
         },
         {
-            "type": "font",
-            "key": "║{#red}│ {icon}  Interface │{$4}│{#keys}║{$2}"
+            "type": "vulkan",
+            "key": "║{#red}│ {icon}  Vulkan    │{$4}│{#keys}║{$2}"
+        },
+        {
+            "type": "opengl",
+            "key": "║{#red}│ {icon}  OpenGL    │{$4}│{#keys}║{$2}"
         },
         {
             "type": "custom",
@@ -250,32 +251,6 @@
             "key": "║{#magenta}│ {icon}  Uptime    │{$4}│{#keys}║{$2}"
         },
         {
-            "type": "users",
-            "myselfOnly": true,                               // Only show current user
-            "keyIcon": "",
-            "key": "║{#magenta}│ {icon}  Login     │{$4}│{#keys}║{$2}"
-        },
-        {
-            "condition": {                                    // Conditional module: only show on non-macOS
-                "!system": "macOS"
-            },
-            "type": "disk",
-            "keyIcon": "",
-            "key": "║{#magenta}│ {icon}  OS Age    │{$4}│{#keys}║{$2}",
-            "folders": "/",                                   // Check root filesystem
-            "format": "{create-time:10} [{days} days]"        // Show creation time and age in days
-        },
-        {
-            "condition": {                                    // Conditional module: only show on macOS
-                "system": "macOS"
-            },
-            "type": "disk",
-            "keyIcon": "",
-            "key": "║{#magenta}│ {icon}  OS Age    │{$4}│{#keys}║{$2}",
-            "folders": "/System/Volumes/VM",                 // Work around for APFS on macOS
-            "format": "{create-time:10} [{days} days]"
-        },
-        {
             "type": "custom",
             "key": "║{#magenta}└──────────────┴{$1}┘{#keys}║",
             "format": ""
@@ -286,7 +261,7 @@
             "format": ""
         },
 
-        // End with color palette and line break
+        // End with color palette
         "break",                                             // Add a blank line
         "colors"                                             // Display color palette
     ]
