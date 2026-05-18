@@ -24,7 +24,7 @@
         "brightColor": false
     },
     "modules": [
-        "break",                           
+        //"break",                           
         "colors",
 
         {

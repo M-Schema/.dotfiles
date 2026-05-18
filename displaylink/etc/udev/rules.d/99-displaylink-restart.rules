@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="17e9", TAG+="systemd", ENV{SYSTEMD_WANTS}="displaylink-hotplug.service"

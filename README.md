@@ -15,7 +15,9 @@ organised with [GNU Stow](https://www.gnu.org/software/stow/).
   ```
 
 
-## Required local files (not in repo)
+### gitconfig 
+
+It requires local files (not in repo):
 
 - `~/.gitconfig.local` — your `[user]` block (name, email, signingkey). Without this, `git commit` will fail.
   ```ini
@@ -25,3 +27,11 @@ organised with [GNU Stow](https://www.gnu.org/software/stow/).
       signingkey = ~/.ssh/id_ed25519
   ```
 - ed25519 SSH keys, see: [https://github.com/settings/keys](https://github.com/settings/keys)
+
+
+
+## not-Stow
+
+### displaylink
+
+It is not managed by stow — it targets `/etc/` and requires root. Apply `install.sh` once after cloning instead.
