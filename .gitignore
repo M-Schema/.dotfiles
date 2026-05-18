@@ -2,6 +2,7 @@
 .claude
 claude/.claude/*
 !claude/.claude/CLAUDE.md
+# CLAUDE.local.md is intentionally excluded — contains personal context
 !claude/.claude/settings.json
 !claude/.claude/agents/
 !claude/.claude/commands/

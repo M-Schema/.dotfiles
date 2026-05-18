@@ -13,6 +13,7 @@ install_file() {
 
 install_file "etc/udev/rules.d/99-displaylink-restart.rules"
 install_file "etc/systemd/system/displaylink-hotplug.service"
+install_file "etc/sddm.conf.d/wayland.conf"
 
 sudo udevadm control --reload-rules
 sudo systemctl daemon-reload

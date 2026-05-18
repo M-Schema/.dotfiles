@@ -184,7 +184,7 @@ style = "bg:lavender"
 format = '[[ in $duration](bg:lavender fg:crust)]($style)' # " in $duration"
 disabled = false
 show_notifications = true
-min_time_to_notify = 0 #45000
+min_time_to_notify = 10000
 
 
 
