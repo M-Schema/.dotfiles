@@ -1,7 +1,0 @@
-[Unit]
-Description=Restart DisplayLink driver on hotplug
-After=displaylink-driver.service
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/systemctl restart displaylink-driver.service
