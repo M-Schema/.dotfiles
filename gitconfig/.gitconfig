@@ -4,8 +4,9 @@
 # [user]
 #     name = Your Name
 #     email = you@example.com
-#     signingkey = ~/.ssh/id_ed25519
 
+[user]
+    signingkey = ~/.ssh/id_ed25519 # fixing unverified commits
 [init]
 	defaultBranch = main
 [pull]
