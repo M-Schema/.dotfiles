@@ -32,11 +32,7 @@ out/                # IntelliJ Build-Output
 .env.local
 .env.*.local
 
-# Lokale Git-Config (sollte nie in einem Repo landen)
+
 .gitconfig.local
-
-# Generelle Caches
 .cache/
-
-# Claude
 .claude/
