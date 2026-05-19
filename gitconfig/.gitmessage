@@ -2,13 +2,16 @@
 # Summary, imperative, start upper case, don't end with a period
 
 ##################################################
-   # Obligatory blank line #######################
+# Obligatory blank line: #########################
+
 # Body: *what* and *why* (not *how*). Include task ID (Jira issue). ####
 # Wrap at 72 chars. ################################## which is here:  #
 ########################################################################
 
+
 ########################################################################
-   # Obligatory blank line #############################################
+# Obligatory blank line: ###############################################
+
 # At the end: Include Co-authored-by for all contributors. Format: 
 # Co-authored-by: name <user@users.noreply.github.com>
 
