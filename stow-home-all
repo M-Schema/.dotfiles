@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail #bash-safety-flags
+
+EXCLUDE="system"
+STOWDIR=$(dirname $(realpath $0))
+STOWTARGET=$HOME
+
+cd $STOWDIR
+echo $STOWDIR "->" $STOWTARGET
+
+for dir in */; do
+    pkg="${dir%/}"
+    [[ " $EXCLUDE " == *" $pkg "* ]] && continue
+    echo ""
+    echo $pkg
+    stow --restow $pkg --target=$STOWTARGET --verbose=1
+done
