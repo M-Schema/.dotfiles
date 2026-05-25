@@ -34,5 +34,6 @@ out/                # IntelliJ Build-Output
 
 
 .gitconfig.local
+!.gitconfig.local.example
 .cache/
 .claude/

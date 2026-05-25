@@ -1,0 +1,4 @@
+# required in ~/.gitconfig.local:
+[user]
+    name = Your Name
+    email = you@example.com
