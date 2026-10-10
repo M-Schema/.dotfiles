@@ -44,9 +44,4 @@ For ed25519 SSH keys, see: [https://github.com/settings/keys](https://github.com
 
 ### displaylink
 
-It is not managed by stow — it targets `/etc/` and requires root. Apply `install.sh` once after cloning instead.
-
-Installs:
-- `etc/udev/rules.d/99-displaylink-restart.rules` — restarts DisplayLink driver on hotplug
-- `etc/systemd/system/displaylink-hotplug.service` — one-shot service triggered by udev
-- `etc/sddm.conf.d/wayland.conf` — sets Wayland as default SDDM session
+(deprecated)
