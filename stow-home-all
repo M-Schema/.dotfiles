@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail #bash-safety-flags
 
+if [[ $EUID -eq 0 ]]; then
+    echo "Nicht mit sudo ausführen: würde nach /root statt nach /home/<user> verlinken." >&2
+    exit 1
+fi
+
 EXCLUDE="system"
 STOWDIR=$(dirname $(realpath $0))
 STOWTARGET=$HOME
