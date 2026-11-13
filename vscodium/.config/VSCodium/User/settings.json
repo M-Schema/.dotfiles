@@ -1,0 +1,9 @@
+{
+    "git.suggestSmartCommit": false,
+    "claudeCode.preferredLocation": "panel",
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "catppuccin.accentColor": "maroon",
+    "claudeCode.hideOnboarding": true,
+    "window.openFoldersInNewWindow": "on"
+}
