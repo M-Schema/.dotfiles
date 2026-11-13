@@ -1,15 +1,18 @@
 # OS
 .DS_Store
 Thumbs.db
-.directory          # KDE Dolphin Metadaten
+# KDE Dolphin Metadaten
+.directory
 
 # Editor-Backups & Swap
 *~
 *.bak
 *.swp
 *.swo
-.#*                 # Emacs lock files
-\#*\#               # Emacs autosave
+# Emacs lock files
+.#*
+# Emacs autosave
+\#*\#
 
 # Vim / Neovim
 [._]*.s[a-v][a-z]
@@ -18,7 +21,6 @@ Session.vim
 .netrwhist
 
 # VS Code / VSCodium
-.vscode/
 *.code-workspace
 
 # JetBrains / IntelliJ
@@ -26,7 +28,8 @@ Session.vim
 *.iml
 *.ipr
 *.iws
-out/                # IntelliJ Build-Output
+# IntelliJ Build-Output
+out/
 
 # Lokale Env-Files (Secrets)
 .env.local

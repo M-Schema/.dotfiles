@@ -9,7 +9,7 @@
 	rebase = true
 [core]
 	editor = codium --wait
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	autocrlf = input
 [commit]
 	gpgsign = true
