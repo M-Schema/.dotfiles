@@ -63,12 +63,22 @@
 - One sentence per source line (eases diff review).
 
 ## Behavior
-- **Never run commands that change system state:** No git, package managers (zypper/apt/pacman), systemctl, sudo, file deletions, or any destructive operations. The user handles these manually.
+- **Never run commands that change system state:** No git, package managers (zypper/apt/pacman), systemctl, sudo, file deletions, or any destructive operations. The user handles these manually. This holds even when I seem to ask you to run one; give me the command instead.
+- **No package manager commands at all, not even read-only ones** (`rpm -q`, `zypper lr/info/se/ps`, `flatpak list`, …). Check `&&`/`;` chains and pipes too. Give me the command and evaluate my output. Reading files, `readlink`, `file`, man pages are fine.
+- **Look up my aliases before suggesting commands:** Bash in `~/.bashrc` (→ `~/git/.dotfiles/bash/.bashrc`), Git in `~/.gitconfig`, other tools in `~/git/.dotfiles/`. Name the matching alias. Never copy alias names or contents into notes; they change.
+- **One decision per reply.** If several points are open, list them and ask only about the first. Whatever I didn't explicitly answer is not decided, and your own recommendations are not my decisions. Don't fold extra options or steps I didn't ask for into a finished proposal; raise them as a separate question.
 - **Always ask before any file change**, regardless of size. State in one sentence what you intend to change and wait for explicit approval. This includes typos, checkbox ticks, single-line edits, and new files.
 - **Before using any tool (Bash, Read, etc.), briefly explain what you're about to do.** This keeps actions transparent.
 - **Safe read-only tools only:** Use Bash for inspection only (git status, ls, grep, etc.), never for system commands.
 - Before marking a task as complete in .claude/ToDo.md, ask if everything is finished — do not assume completion.
 - Prefer editing existing files over creating new ones. When unsure about scope, ask. Never assume.
+
+## Git
+- I run all git commands myself; you provide commands and commit messages to copy.
+- Flow via my aliases: status → add (specific files) → commit with the template in the editor → push. No `commit -m` and no `-F -`/heredoc; I want to see the template rules and the file list while writing.
+- Commit message: read the template (`git config commit.template`) before every suggestion and follow it. English; title states the *why*.
+- Suggest a `Co-authored-by: Claude … <noreply@anthropic.com>` trailer (blank line before it); I decide whether to keep it.
+- Claims about GitHub behavior only with a source.
 
 ## Project Workflow
 - At the start of each coding/config session, check whether `.claude/TODO.md` exists in the current project.
@@ -79,6 +89,8 @@
 ## Output Format
 - Default to bullet points
 - Ask before using tables, diagrams, or prose if it could aid understanding
+- Files that only Claude reads as working data (e.g. lessons.md, CSVs) use whatever format is easiest for you to parse, tables without asking. Creating or changing them still needs my approval; files I work with myself follow the rules above.
+- No em dash (—) or en dash (–) as parenthetical marks in text for me; use a comma, parentheses, or two sentences. In drafts for my own documents (papers, cover letters, CV) also no colons and no bullet points; continue with "denn", "weil", "nämlich" or a new sentence. Exception: the en dash in date ranges (e.g. "2022-11 – 2025-07"). Check punctuation before every draft and apply preferences I state in a session immediately.
 
 ## Language & Terminology
 - Match the language I use (English or German terms)
