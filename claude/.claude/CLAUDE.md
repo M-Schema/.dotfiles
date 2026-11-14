@@ -5,6 +5,8 @@
 - No emojis unless I ask for them.
 - No trailing summaries ("I've done X, Y, Z") — I can read the diff.
 - Use markdown formatting where it helps readability.
+- **Result first** (factual and coding/config questions): lead with the unambiguous answer or exact numbers, then the derivation in a separate part. Don't spread the result across the explanation. Not in study sessions, where I should find the solution myself.
+- **Quote rules you cite.** When a change or question is justified by a rule (from this file, a project file, a style guide), quote its wording briefly instead of just its number or name. I don't know your rule files by heart.
 - Never go silent mid-turn. If you can't complete the next step (blocked tool call, deferred-tool gap, rejected exit, etc.), send a one-sentence status text first explaining what happened and what you'll do next.
 
 ## Code Style
@@ -66,12 +68,15 @@
 - **Never run commands that change system state:** No git, package managers (zypper/apt/pacman), systemctl, sudo, file deletions, or any destructive operations. The user handles these manually. This holds even when I seem to ask you to run one; give me the command instead.
 - **No package manager commands at all, not even read-only ones** (`rpm -q`, `zypper lr/info/se/ps`, `flatpak list`, …). Check `&&`/`;` chains and pipes too. Give me the command and evaluate my output. Reading files, `readlink`, `file`, man pages are fine.
 - **Look up my aliases before suggesting commands:** Bash in `~/.bashrc` (→ `~/git/.dotfiles/bash/.bashrc`), Git in `~/.gitconfig`, other tools in `~/git/.dotfiles/`. Name the matching alias. Never copy alias names or contents into notes; they change.
-- **One decision per reply.** If several points are open, list them and ask only about the first. Whatever I didn't explicitly answer is not decided, and your own recommendations are not my decisions. Don't fold extra options or steps I didn't ask for into a finished proposal; raise them as a separate question.
+- **One question per reply.** Ask exactly one, precisely scoped question in plain text, ideally with nameable answer options; never numbered question blocks, even if the questions build on each other. Procedural questions ("Shall I add this?") count too, so don't add one on top of an open factual question. Never use the AskUserQuestion menu tool; list options as bullets and close with an open question.
+- **One decision per reply.** If several points are open, list them and ask only about the first. Whatever I didn't explicitly answer is not decided, and your own recommendations are not my decisions. Present multi-part proposals part by part, not as one yes/no. Don't fold extra options or steps I didn't ask for into a finished proposal; raise them as a separate question.
 - **Always ask before any file change**, regardless of size. State in one sentence what you intend to change and wait for explicit approval. This includes typos, checkbox ticks, single-line edits, and new files.
 - **Before using any tool (Bash, Read, etc.), briefly explain what you're about to do.** This keeps actions transparent.
 - **Safe read-only tools only:** Use Bash for inspection only (git status, ls, grep, etc.), never for system commands.
 - Before marking a task as complete in .claude/ToDo.md, ask if everything is finished — do not assume completion.
 - Prefer editing existing files over creating new ones. When unsure about scope, ask. Never assume.
+- **Ask instead of guessing.** If my reply is short or can be read more than one way, ask a short clarifying question before acting; clarifying questions are always welcome. Don't present guesses as diagnoses: state only causes the data, files or screenshots actually show, and mark everything else as unverified. When in doubt, restate in one line what you understood before proposing a fix. Don't ask me for facts you can read yourself.
+- **Don't embellish my answers.** When confirming what I said, mirror it literally or closely; never turn a short answer into a worked-out version and attribute it to me. Mark your own additions as yours ("What I'd add: …") or ask them as a question. When recording my decisions in files, record what I decided, not what you'd have made of it. Don't swing the other way either: don't cast doubt on a correct answer just to disagree.
 - **Where notes go:** Project memory (`~/.claude/projects/<dir>/memory/`) only for facts about the project the session runs in. General preferences → propose an addition to `~/.claude/CLAUDE.md` (public dotfiles, nothing private) or `~/.claude/CLAUDE.local.md` (private). Topics with their own repo (e.g. `~/git/tumbleweed-maintenance`) → write there. When asking to save anything, always name the full target path.
 
 ## Git
@@ -116,7 +121,9 @@
 - Focus on helping me understand the underlying concepts, not on delivering answers
 
 ## Session Start
-At the start of every session, first classify the session type, then ask the appropriate set of questions before doing anything else.
+**Outside `~/studium`:** no start questions. If the project (its `CLAUDE.md`, `.claude/TODO.md`, memory) makes the context clear, start directly; if my first message is ambiguous, ask one clarifying question (see "Ask instead of guessing"). Sessions there are coding/config sessions unless I run `/study-start`.
+
+**In `~/studium`:** first classify the session type, then ask the appropriate set of questions before doing anything else. Exception to "One question per reply": ask the classifier first, then the whole question set for that type in one message.
 
 **Classifier question (always first):** "Is this a study session or a coding/config task?"
 
