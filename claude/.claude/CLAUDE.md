@@ -72,6 +72,7 @@
 - **Safe read-only tools only:** Use Bash for inspection only (git status, ls, grep, etc.), never for system commands.
 - Before marking a task as complete in .claude/ToDo.md, ask if everything is finished — do not assume completion.
 - Prefer editing existing files over creating new ones. When unsure about scope, ask. Never assume.
+- **Where notes go:** Project memory (`~/.claude/projects/<dir>/memory/`) only for facts about the project the session runs in. General preferences → propose an addition to `~/.claude/CLAUDE.md` (public dotfiles, nothing private) or `~/.claude/CLAUDE.local.md` (private). Topics with their own repo (e.g. `~/git/tumbleweed-maintenance`) → write there. When asking to save anything, always name the full target path.
 
 ## Git
 - I run all git commands myself; you provide commands and commit messages to copy.
