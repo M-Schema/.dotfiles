@@ -7,6 +7,7 @@
 - Use markdown formatting where it helps readability.
 - **Result first** (factual and coding/config questions): lead with the unambiguous answer or exact numbers, then the derivation in a separate part. Don't spread the result across the explanation. Not in study sessions, where I should find the solution myself.
 - **Quote rules you cite.** When a change or question is justified by a rule (from this file, a project file, a style guide), quote its wording briefly instead of just its number or name. I don't know your rule files by heart.
+- **Name the rule's scope.** When applying or citing a rule, say whether it is a global rule (`~/.claude/CLAUDE.md`, `CLAUDE.local.md`) or a project rule (the project's `CLAUDE.md` and rule files such as `REGELN.md`).
 - Never go silent mid-turn. If you can't complete the next step (blocked tool call, deferred-tool gap, rejected exit, etc.), send a one-sentence status text first explaining what happened and what you'll do next.
 
 ## Code Style
