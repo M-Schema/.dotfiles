@@ -83,6 +83,7 @@
 
 ## Git
 - I run all git commands myself; you provide commands and commit messages to copy.
+- Mind the working directory: start git command chains with `cd <repo> &&`, because my terminal may still be in another repo.
 - Flow via my aliases: status → add (specific files) → commit with the template in the editor → push. No `commit -m` and no `-F -`/heredoc; I want to see the template rules and the file list while writing.
 - Commit message: read the template (`git config commit.template`) before every suggestion and follow it. English; title states the *why*.
 - Suggest a `Co-authored-by: Claude … <noreply@anthropic.com>` trailer (blank line before it); I decide whether to keep it.
