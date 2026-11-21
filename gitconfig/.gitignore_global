@@ -40,3 +40,4 @@ out/
 !.gitconfig.local.example
 .cache/
 .claude/
+**/.claude/settings.local.json
