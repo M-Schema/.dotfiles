@@ -6,8 +6,8 @@ case $- in *i*) fastfetch ;; esac
 # https://starship.rs
 eval "$(starship init bash)"
 
-# Update: System (zypper) + Flatpak + Neustart-Hinweise (zypper ps) + Boot-Einträge prüfen (sdbootutil) + Neustart nötig? (needs-rebooting) + Plasma-Widgets und Firmware (via Discover)
-alias system-update='sudo zypper refresh && sudo zypper dup --download-in-advance && flatpak update -y && flatpak uninstall --unused -y && sudo zypper ps -s && sudo sdbootutil -v list-entries && { zypper needs-rebooting || true; } && setsid -f plasma-discover --mode update >/dev/null 2>&1'
+# Update: System (zypper) + Flatpak + Neustart-Hinweise (zypper ps) + Boot-Einträge prüfen (sdbootutil) + Neustart nötig? (needs-rebooting) + Plasma-Widgets und Firmware (via Discover); läuft bei zypper-Exit 107 (Skriptfehler) weiter
+alias system-update='sudo zypper refresh && { sudo zypper dup --download-in-advance; rc=$?; [ "$rc" -eq 107 ] && echo "Hinweis: zypper-Exit 107 (Skriptfehler, Details in /var/log/zypp/history), Kette läuft weiter"; [ "$rc" -eq 0 ] || [ "$rc" -eq 107 ]; } && flatpak update -y && flatpak uninstall --unused -y && sudo zypper ps -s && sudo sdbootutil -v list-entries && { zypper needs-rebooting || true; } && setsid -f plasma-discover --mode update >/dev/null 2>&1'
 
 # Vorschau: zeigt, was der zypper-Teil von system-update installieren/entfernen würde, ohne etwas zu ändern
 alias system-update-dry-run='sudo zypper refresh && sudo zypper dup --dry-run'
